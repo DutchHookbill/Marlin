@@ -5,16 +5,34 @@ TODO: small area flow compensation
 
 
 BLTouch
-Enable BLtouch
-Nozzle to probe: { -39.5, 1.4, 0 }
-Auto bed levelling bilinear
-Z_SAFE_HOMING aan
-Z-MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN aan
+From E3D Guide
+    Config:
+        #define BLtouch
+        #define NOZZLE_TO_PROBE_OFFSET { -39.5, 1.4, 0 }
+        #define AUTO_BED_LEVELING_BILINEAR
+        //#define MESH_BED_LEVELING
+        #define Z_SAFE_HOMING
+        //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN (misschien niet nodig)
+        #define USE_PROBE_FOR_Z_HOMING
+    Config advanced:
+        #define BABYSTEP_ZPROBE_OFFSET
+
+From Antclabs Guide
+    Config 
+        #define USE_ZMIN_PLUG // a Z probe
+        #define ENDSTOPPULLUPS
+        #define ENDSTOP_INTERRUPTS_FEATURE
+
+        #define PROBING_MARGIN 40
+
+        #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z / 5
+        #define Z_CLEARANCE_DEPLOY_PROBE 15 // set up at least 10
+        #define Z_CLEARANCE_BETWEEN_PROBES 5 // set up at least 5
+
 RESTORE_LEVELING_AFTER_G28 aan
 Z_CLEARANCE_DEPLOY_PROBE > 15 (was 10)
-ENDSTOP_INTERRUPTS_FEATURE aan
-USE_ZMIN_PLUG aan
-BABYSTEP_ZPROBE_OFFSET aan
+
+
 
 Advanced pause purge length 15mm (was 50)
 
