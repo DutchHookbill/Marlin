@@ -29,45 +29,48 @@ From Antclabs Guide
         #define Z_CLEARANCE_DEPLOY_PROBE 15 // set up at least 10
         #define Z_CLEARANCE_BETWEEN_PROBES 5 // set up at least 5
 
-RESTORE_LEVELING_AFTER_G28 aan
-Z_CLEARANCE_DEPLOY_PROBE > 15 (was 10)
+    RESTORE_LEVELING_AFTER_G28 aan
+    Z_CLEARANCE_DEPLOY_PROBE > 15 (was 10)
 
 
 
-Advanced pause purge length 15mm (was 50)
+    Advanced pause purge length 15mm (was 50)
 
-Pid autotune results
-Kp 21.96
-Ki 1.81
-Kd 66.75
+    Pid autotune results
+    Kp 21.96
+    Ki 1.81
+    Kd 66.75
 
-Slicer settings:
-Use scarf joint
+    Slicer settings:
+    Use scarf joint
 
-// Custom Adaptive purge
-G92 E0 ; reset extruder
-G1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F6000 ; position 10mm left from the lower left of the first layer
-G1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+30} E30 F360 ; extrude 30mm of filament in the Y direction
-G92 E0 ; reset extruder
-G1 E-0.5 F2100 ; small retraction
-G1 Y(first_layer_print_min[1]+40)  f6000 ; move an additional 10mm without extruding
-G92 E0 ; reset extruder
+    // Custom Adaptive purge
+    G92 E0 ; reset extruder
+    G1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]} Z0.8 F6000 ; position 10mm left from the lower left of the first layer
+    G1 X{first_layer_print_min[0]-10} Y{first_layer_print_min[1]+30} E30 F360 ; extrude 30mm of filament in the Y direction
+    G92 E0 ; reset extruder
+    G1 E-0.5 F2100 ; small retraction
+    G1 Y(first_layer_print_min[1]+40)  f6000 ; move an additional 10mm without extruding
+    G92 E0 ; reset extruder
 
 
 Hemera
-Cartridge: 24V30W
+    Cartridge: 24V30W
 
-Firmware Marlin 2.0 Thermistor settings
+    Firmware Marlin 2.0 Thermistor settings
 
-config.g:
+    config.g:
 
-#define TEMP_SENSOR_0 1
-#define HEATER_0_MINTEMP 5
-#define HEATER_0_MAXTEMP 300
-#define DEFAULT_AXIS_STEPS_PER_UNIT { 80, 80, 400, 391.133 }
+    #define TEMP_SENSOR_0 1
+    #define HEATER_0_MINTEMP 5
+    #define HEATER_0_MAXTEMP 300
+    #define DEFAULT_AXIS_STEPS_PER_UNIT { 80, 80, 400, 391.133 }
 
-#define MANUAL_X_HOME_POS -3.5
-#define MANUAL_Y_HOME_POS -11
+    #define MANUAL_X_HOME_POS -3.5
+    #define MANUAL_Y_HOME_POS -11
 
-Configuration_adv.h:
-#define E0_CURRENT 1000
+    Configuration_adv.h:
+    #define E0_CURRENT 1000
+
+Fans
+    #define FAN_SOFT_PWM (voor zachtere part fan)
