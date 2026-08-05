@@ -37,9 +37,9 @@ From Antclabs Guide
     Advanced pause purge length 15mm (was 50)
 
     Pid autotune results
-    Kp 21.96
-    Ki 1.81
-    Kd 66.75
+    #define DEFAULT_KP  21.91
+    #define DEFAULT_KI   1.69
+    #define DEFAULT_KD  70.97
 
     Slicer settings:
     Use scarf joint

@@ -735,9 +735,9 @@
     #define DEFAULT_KI_LIST {   1.54,   1.54 }
     #define DEFAULT_KD_LIST {  76.55,  76.55 }
   #else
-    #define DEFAULT_KP  21.73
-    #define DEFAULT_KI   1.54
-    #define DEFAULT_KD  76.55
+    #define DEFAULT_KP  21.91
+    #define DEFAULT_KI   1.69
+    #define DEFAULT_KD  70.97
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -1731,7 +1731,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -43.18, 0, -3.68 } // (mm) X, Y, Z distance from Nozzle tip to Probe trigger-point
+#define NOZZLE_TO_PROBE_OFFSET { -43.18, 0, -2.79 } // (mm) X, Y, Z distance from Nozzle tip to Probe trigger-point
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1743,7 +1743,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 40
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
