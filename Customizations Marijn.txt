@@ -8,7 +8,7 @@ BLTouch
 From E3D Guide
     Config:
         #define BLtouch
-        #define NOZZLE_TO_PROBE_OFFSET { -39.5, 1.4, 0 }
+        #define NOZZLE_TO_PROBE_OFFSET { -43.18, 0, -3.04 }
         #define AUTO_BED_LEVELING_BILINEAR
         //#define MESH_BED_LEVELING
         #define Z_SAFE_HOMING
